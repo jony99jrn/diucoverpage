@@ -17,6 +17,8 @@ async function downloadCoverPagePdf() {
   const node = document.querySelector('.document');
   const filename = buildFilename();
 
+  lockDocumentToA4();
+
   const options = {
     margin: 0,
     image: { type: 'jpeg', quality: 0.98 },
