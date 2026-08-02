@@ -6,23 +6,34 @@
 .document {
   position: relative;
   background: #ffffff;
-  border: 1.5px solid var(--ink-navy);
   border-radius: 4px;
   box-shadow: var(--shadow-paper);
   padding: var(--space-4) var(--space-5) var(--space-4);
-  min-height: 720px;
+  width: 100%;
   max-width: 620px;
+  aspect-ratio: 210 / 297; /* true A4 ratio — screen preview now matches the exported PDF page exactly */
   margin: 0 auto;
   overflow: hidden;
 }
 
-/* Center.svg — the crest, large and faint, centered on the page behind the text */
+/* Framed border, inset from the page edge — matches the real DIU letterhead look */
+.document::before {
+  content: '';
+  position: absolute;
+  inset: var(--space-3);
+  border: 1.5px solid var(--ink-navy);
+  border-radius: 2px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Center.svg — the crest, faint, centered on the page behind the text */
 .document__watermark {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 82%;
-  max-width: 420px;
+  width: 60%;
+  max-width: 300px;
   transform: translate(-50%, -50%);
   opacity: 0.14;
   z-index: 0;

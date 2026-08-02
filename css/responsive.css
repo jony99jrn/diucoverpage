@@ -64,6 +64,5 @@
 
   .document {
     padding: var(--space-4) var(--space-3) var(--space-3);
-    min-height: 0;
   }
 }
