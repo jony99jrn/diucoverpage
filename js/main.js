@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   buildPreviewRows(previewRoot);
   await buildForm(formRoot);
   updatePreview();
+  lockDocumentToA4();
+
+  window.addEventListener('resize', lockDocumentToA4);
 
   const downloadBtn = document.getElementById('downloadBtn');
   downloadBtn.addEventListener('click', downloadCoverPagePdf);
@@ -21,6 +24,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       document.querySelectorAll('.pane').forEach((pane) => {
         pane.classList.toggle('is-visible', pane.dataset.pane === target);
       });
+      // .document has zero width while its pane is hidden on mobile, so
+      // re-lock its height once the Preview tab actually becomes visible.
+      if (target === 'document') lockDocumentToA4();
     });
   });
 });
