@@ -1,0 +1,180 @@
+.document-wrap {
+  position: sticky;
+  top: var(--space-4);
+}
+
+.document {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid var(--ink-navy);
+  border-radius: 4px;
+  box-shadow: var(--shadow-paper);
+  padding: var(--space-4) var(--space-5) var(--space-4);
+  min-height: 720px;
+  max-width: 620px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Center.svg — the crest, large and faint, centered on the page behind the text */
+.document__watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 82%;
+  max-width: 420px;
+  transform: translate(-50%, -50%);
+  opacity: 0.14;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.document__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Top.svg — the full lockup (crest + wordmark), sized up per the real letterhead */
+.document__logo {
+  display: block;
+  width: min(88%, 360px);
+  margin: 0 auto var(--space-3);
+}
+
+.document__badge {
+  margin: 0 auto var(--space-4);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-navy);
+  text-decoration: underline;
+  text-align: center;
+}
+
+.document__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.document__heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-navy);
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: var(--space-2);
+}
+
+.doc-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.doc-row__label {
+  color: var(--charcoal);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.doc-row__value {
+  color: var(--charcoal);
+  font-weight: 400;
+}
+
+.doc-row__value.is-empty {
+  color: var(--ghost);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.document__footer-line {
+  font-weight: 700;
+  color: var(--charcoal);
+  font-size: 0.92rem;
+  margin-top: 0.2rem;
+}
+
+.document__date-pill {
+  margin: var(--space-4) auto 0;
+  border: 1.5px solid var(--ink-navy);
+  border-radius: 999px;
+  padding: 0.5rem 1.4rem;
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  width: fit-content;
+}
+
+.document__date-pill span:first-child {
+  font-weight: 700;
+  color: var(--ink-navy);
+}
+
+.document__date-pill span:last-child {
+  color: var(--charcoal);
+}
+
+.document__date-pill span.is-empty {
+  color: var(--ghost);
+  font-style: italic;
+}
+
+.download-bar {
+  margin-top: var(--space-4);
+  display: flex;
+  gap: var(--space-2);
+}
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), transform 0.15s var(--ease);
+  text-align: center;
+}
+
+.btn--primary {
+  flex: 1;
+  background: var(--ink-navy);
+  color: var(--paper);
+}
+
+.btn--primary:hover {
+  background: var(--brass-strong);
+}
+
+.btn--primary:active {
+  transform: scale(0.98);
+}
+
+.btn--primary:disabled {
+  background: var(--paper-line);
+  color: var(--ghost);
+  cursor: not-allowed;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink-navy-soft);
+  border: 1px solid var(--paper-line);
+}
+
+.btn--ghost:hover {
+  border-color: var(--brass);
+  color: var(--brass-strong);
+}
