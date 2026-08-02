@@ -3,6 +3,21 @@
 
 const ICON_CACHE = {};
 
+// Pins .document to an explicit pixel height in true A4 proportion
+// (297/210). We can't rely on the CSS `aspect-ratio` property alone —
+// the browser preview honors it, but the html2canvas step used for the
+// PDF export does not reliably replicate it during capture, which was
+// causing the exported page to come out stretched. A plain pixel height
+// is respected identically by both the live preview and the capture.
+function lockDocumentToA4() {
+  const doc = document.querySelector('.document');
+  if (!doc) return;
+  const width = doc.getBoundingClientRect().width;
+  if (width > 0) {
+    doc.style.height = `${width * (297 / 210)}px`;
+  }
+}
+
 async function loadIcon(name) {
   if (ICON_CACHE[name]) return ICON_CACHE[name];
   const res = await fetch(`assets/icons/${name}.svg`);
