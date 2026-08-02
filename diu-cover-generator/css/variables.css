@@ -1,0 +1,31 @@
+:root {
+  /* Color — ink & paper, with a brass seal accent */
+  --ink-navy: #1B2A4A;      /* primary dark, headings, seal ring */
+  --ink-navy-soft: #33456b; /* secondary text on paper */
+  --paper: #FBF9F4;         /* main background, the "form" surface */
+  --paper-deep: #F1ECDF;    /* recessed panels, input backgrounds */
+  --paper-line: #D8D0BC;    /* ruled dividers, borders */
+  --brass: #B08D3F;         /* accent — seal, focus, primary action */
+  --brass-strong: #8f7130;  /* hover/active brass */
+  --charcoal: #2B2B28;      /* body text */
+  --ghost: #9C9686;         /* placeholder / empty-state ink */
+  --success-ring: #4C7A5A;  /* used sparingly, complete-state hint */
+
+  /* Type */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing scale */
+  --space-1: 0.4rem;
+  --space-2: 0.8rem;
+  --space-3: 1.2rem;
+  --space-4: 1.8rem;
+  --space-5: 2.8rem;
+  --space-6: 4rem;
+
+  /* Misc */
+  --radius: 3px;
+  --shadow-paper: 0 1px 2px rgba(27,42,74,0.06), 0 12px 28px -8px rgba(27,42,74,0.18);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
