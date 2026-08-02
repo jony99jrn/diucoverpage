@@ -25,34 +25,3 @@ diu-cover-generator/
     ├── icons/              SVG icons for the draft form (book, teacher, student, calendar)
     └── images/             Real letterhead assets: top.svg (logo lockup), center.svg (watermark crest)
 ```
-
-Add a new field by editing the `FIELD_GROUPS` array in `js/state.js` — the
-form and the live preview both render from that one config, so nothing else
-needs to change.
-
-## Running it locally
-
-Because `render.js` fetches the icon SVGs, opening `index.html` directly as a
-`file://` URL won't work in most browsers (fetch is blocked from `file://`).
-Serve the folder over HTTP instead:
-
-```
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
-
-## Deploying
-
-**GitHub Pages**
-1. Push this folder to a GitHub repository.
-2. In the repo, go to Settings → Pages → Deploy from a branch, pick `main`
-   and the root folder.
-3. Your site is live at `https://<username>.github.io/<repo>/`.
-
-**Vercel**
-1. Push the same repository to GitHub.
-2. In Vercel, "Add New Project" → import the repo.
-3. Framework preset: "Other" (it's a static site — no build command needed).
-4. Deploy.
-
-No environment variables or config files are required either way.
